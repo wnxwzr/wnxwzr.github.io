@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>解决hdc无法识别到模拟器设备</title>
+      <link href="/2024/03/05/Harmony/%E8%A7%A3%E5%86%B3hdc%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E5%88%B0%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%AE%BE%E5%A4%87/"/>
+      <url>/2024/03/05/Harmony/%E8%A7%A3%E5%86%B3hdc%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E5%88%B0%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%AE%BE%E5%A4%87/</url>
+      
+        <content type="html"><![CDATA[<h1 id="HDC版本不一致导致"><a href="#HDC版本不一致导致" class="headerlink" title="HDC版本不一致导致"></a>HDC版本不一致导致</h1><p>执行查看链接设备的命令，无法识别到运行的设备。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdc list targets</span><br></pre></td></tr></table></figure><p>尝试kill服务重启也无法识别</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hdc kill -r</span><br></pre></td></tr></table></figure><p><img src="/images/%E8%A7%A3%E5%86%B3hdc%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E5%88%B0%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%AE%BE%E5%A4%87/image-20240305174625592.png" alt="image-20240305174625592"> </p><h2 id="问题原因"><a href="#问题原因" class="headerlink" title="问题原因"></a>问题原因</h2><p>通过查看软件设置，可以看到模拟器相关的资源文件是和HarmonyOS相关的，且输入HarmonyOS  sdk api 9</p><p><img src="/images/%E8%A7%A3%E5%86%B3hdc%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E5%88%B0%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%AE%BE%E5%A4%87/image-20240305175118514.png" alt="image-20240305175118514"> </p><p>但是之前的hdc环境变量的配置，我是配置的OpenHarmony sdk目录下的toolchains，以下是之前<code>错误的配置</code>：</p><p><img src="/images/%E8%A7%A3%E5%86%B3hdc%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E5%88%B0%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%AE%BE%E5%A4%87/image-20240305175629666.png" alt="image-20240305175629666"></p><p>正确的配置是要换成HarmonyOS  sdk目录下的toolchains</p><p><img src="/images/%E8%A7%A3%E5%86%B3hdc%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E5%88%B0%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%AE%BE%E5%A4%87/image-20240305175759838.png" alt="image-20240305175759838"></p><p>重新配置好匹配版本的hdc环境变量后就可以正常识别到设备和设备交互啦</p><p><img src="/images/%E8%A7%A3%E5%86%B3hdc%E6%97%A0%E6%B3%95%E8%AF%86%E5%88%AB%E5%88%B0%E6%A8%A1%E6%8B%9F%E5%99%A8%E8%AE%BE%E5%A4%87/image-20240305180022361.png" alt="image-20240305180022361"> </p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 安全开发 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Harmony开发 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>第一个鸿蒙应用-HelloWorld</title>
       <link href="/2024/03/05/Harmony/%E5%88%9B%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8CHelloWorld/"/>
       <url>/2024/03/05/Harmony/%E5%88%9B%E5%BB%BA%E5%92%8C%E8%BF%90%E8%A1%8CHelloWorld/</url>
